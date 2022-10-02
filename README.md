@@ -22,7 +22,7 @@ Nuestro proyecto es un sistema de detección de siniestros que ocurren en depart
 
 
 
-### Roles del miembros 
+### Roles de los miembros 
 
 
 	
