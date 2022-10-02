@@ -34,7 +34,7 @@ Nuestro proyecto es un sistema de detección de siniestros que ocurren en depart
 	Rol de José Ernesto Calvillo Lizárraga: Documentación/Programación.  
 
 
-Continuara..
+Continuara...
 
 
 
