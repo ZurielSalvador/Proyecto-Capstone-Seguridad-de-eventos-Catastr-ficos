@@ -49,21 +49,22 @@ Nuestro proyecto es un sistema de detección de siniestros que ocurren en depart
 
 
 
-Para poder ver dicho código se encuentra en la carpeta Codigo-Sensores/Sensor-ARD-364
+     Para poder ver dicho código se encuentra en la carpeta Codigo-Sensores/Sensor-ARD-364
 
 
 2. Se elaboró un ejemplo para enviar mensaje por Whatsapp mediante a Node-RED.
 
 
 
-El archivo JSON se encuentra en la carpeta llamada: Notificación por whatsapp mediante Node-Red
+     El archivo JSON se encuentra en la carpeta llamada: Notificación por whatsapp mediante Node-Red
 
 
 
-3. Se elaboró un codigo del sensor mpu6050 dónde guarda los valores en la base de datos MySQL, posteriormente se gráfica en grafana, 
+3. Se elaboró un codigo del sensor mpu6050 dónde guarda los valores en la base de datos MySQL, posteriormente se gráfica en grafana.
 
 
-Esta información es muy importante debido se obtiene las lecturas de los sensores guardados y con ayuda de grafana podemos adquirir información sobre el estado que se encuentre dicho departamento, por lo tanto como primer avance se identifa como actúan los sensores con base a lo requerido para nuestra primera implementación.
+     Esta información es muy importante debido se obtiene las lecturas de los sensores guardados y con ayuda de grafana podemos adquirir información sobre el estado que se encuentre dicho departamento, por lo tanto como primer avance se identifa como actúan los sensores con base a lo requerido para nuestra primera implementación.
+
 
 
 La información obtenida del sensor mpu6050 se gráfica para ver el comportamiento de manera clara y de acuerdo a lo implementando de la base datos podemos tener un historial de información sobre la lectura del sensor.
