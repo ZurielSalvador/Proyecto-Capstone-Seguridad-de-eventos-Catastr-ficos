@@ -1,0 +1,59 @@
+[
+    {
+        "id": "d743e87690dd68f2",
+        "type": "tab",
+        "label": "Ejemplo de notificación por whatsapp",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "459d214c1d02c38c",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "d743e87690dd68f2",
+        "name": "Hola whatsapp",
+        "account": "4a5b1574026746ec",
+        "text": "Hola whatsapp",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 340,
+        "y": 2380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7438caa6ab8564e",
+        "type": "inject",
+        "z": "d743e87690dd68f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 2380,
+        "wires": [
+            [
+                "459d214c1d02c38c"
+            ]
+        ]
+    },
+    {
+        "id": "4a5b1574026746ec",
+        "type": "node-red-contrib-whatsapp-cmb-account",
+        "name": ""
+    }
+]
