@@ -122,4 +122,3 @@ La información obtenida del sensor mpu6050 se gráfica para ver el comportamien
 
 
 
-
