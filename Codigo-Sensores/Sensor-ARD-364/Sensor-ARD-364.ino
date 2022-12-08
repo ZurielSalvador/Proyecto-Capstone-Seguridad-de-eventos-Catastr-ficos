@@ -189,5 +189,5 @@ void lecturayPublicacion(){
   int str_len = json.length() + 1;//Se calcula la longitud del string
   char char_array[str_len];//Se crea un arreglo de caracteres de dicha longitud
   json.toCharArray(char_array, str_len);//Se convierte el string a char array    
-  client.publish("SeguridadCatastrofes/Departamento1/cocina", char_array); // Esta es la función que envía los datos por MQTT, especifica el tema y el valor
+  client.publish("SeguridadCatastrofes/Departamento/cocina", char_array); // Esta es la función que envía los datos por MQTT, especifica el tema y el valor
 }

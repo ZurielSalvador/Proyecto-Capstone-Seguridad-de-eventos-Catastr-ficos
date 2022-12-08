@@ -1,0 +1,369 @@
+[
+    {
+        "id": "f91577c19f663484",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e8a23a45c5e147a3",
+        "type": "mqtt in",
+        "z": "f91577c19f663484",
+        "name": "",
+        "topic": "SeguridadCatastrofes/Departamento/cocina",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "05e458152a7436f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "0c5104df453593c6"
+            ]
+        ]
+    },
+    {
+        "id": "477cdcaf30d105e4",
+        "type": "comment",
+        "z": "f91577c19f663484",
+        "name": "Recibe el json",
+        "info": "",
+        "x": 190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0c5104df453593c6",
+        "type": "json",
+        "z": "f91577c19f663484",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 590,
+        "y": 120,
+        "wires": [
+            [
+                "9332946add42d6d1",
+                "8be9cf18718c120a"
+            ]
+        ]
+    },
+    {
+        "id": "ecf00caa08447e90",
+        "type": "worldmap",
+        "z": "f91577c19f663484",
+        "name": "",
+        "lat": "19.354509",
+        "lon": "-99.236450",
+        "zoom": "",
+        "layer": "EsriDG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/ui/",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 730,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "6eb452a51ca38363",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Marca",
+        "func": "var aux = \"Incendio en casa \"+ global.get(\"casaID\")\nmsg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"icon\": \"fa-free-code-camp\", \"iconColor\":\"red\", \"label\": global.get(\"direccion\")};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46e1a1d0abeddb4c",
+        "type": "inject",
+        "z": "f91577c19f663484",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1080,
+        "y": 180,
+        "wires": [
+            [
+                "6eb452a51ca38363"
+            ]
+        ]
+    },
+    {
+        "id": "a6bda3a1d9dd3fa8",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "imprimir ubicación",
+        "func": "msg.payload = { \"command\": { \"bounds\": [[19.342205, -99.256397], [19.360719, -99.227494]] } }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "ecf00caa08447e90"
+            ]
+        ]
+    },
+    {
+        "id": "9332946add42d6d1",
+        "type": "debug",
+        "z": "f91577c19f663484",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8be9cf18718c120a",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Variables globales",
+        "func": "global.set(\"casaID\", msg.payload.casaID);\nglobal.set(\"temperatura\", msg.payload.temperatura);\nglobal.set(\"gas\", msg.payload.gas);\nglobal.set(\"flama\", msg.payload.flama);\nglobal.set(\"latitud\", msg.payload.latitud);\nglobal.set(\"longitud\", msg.payload.longitud);\nglobal.set(\"direccion\", msg.payload.direccion);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d58d61604d9ec0a6",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Deteción de incendios",
+        "func": "if (global.get(\"temperatura\") >= 80 && global.get(\"flama\") == 1){\n    var aux = \"Incendio en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"icon\": \"fa-free-code-camp\", \"iconColor\": \"red\", \"label\": global.get(\"direccion\") };\n    return msg;\n}\nelse{\n    var aux = \"Incendio en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"deleted\": true };\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "ecf00caa08447e90"
+            ]
+        ]
+    },
+    {
+        "id": "cb1210eb4bd79105",
+        "type": "comment",
+        "z": "f91577c19f663484",
+        "name": "Recibe el json",
+        "info": "",
+        "x": 190,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "f5bbb1142363174b",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Borrar",
+        "func": "var aux = \"Incendio en casa \" + global.get(\"casaID\")\nmsg.payload = {\"name\":aux,\"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"deleted\": true };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f4cd53a77f6a27d",
+        "type": "inject",
+        "z": "f91577c19f663484",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1080,
+        "y": 120,
+        "wires": [
+            [
+                "f5bbb1142363174b"
+            ]
+        ]
+    },
+    {
+        "id": "820b5573cc338876",
+        "type": "inject",
+        "z": "f91577c19f663484",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 360,
+        "wires": [
+            [
+                "d58d61604d9ec0a6",
+                "c7c99ce368e87102"
+            ]
+        ]
+    },
+    {
+        "id": "a4c1bdd11124950c",
+        "type": "inject",
+        "z": "f91577c19f663484",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "a6bda3a1d9dd3fa8"
+            ]
+        ]
+    },
+    {
+        "id": "c7c99ce368e87102",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Deteción de fugas de gas",
+        "func": "if (global.get(\"gas\") >= 200 ){\n    var aux = \"Fuga de gas en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"icon\": \"fa-fire-extinguisher\", \"iconColor\": \"yellow\", \"label\": global.get(\"direccion\") };\n    return msg;\n}\nelse{\n    var aux = \"Fuga de gas en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"deleted\": true };\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "ecf00caa08447e90"
+            ]
+        ]
+    },
+    {
+        "id": "05e458152a7436f7",
+        "type": "mqtt-broker",
+        "name": "Broker HiveMQ",
+        "broker": "3.124.62.105",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
