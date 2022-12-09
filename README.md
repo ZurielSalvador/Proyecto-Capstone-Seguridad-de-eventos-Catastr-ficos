@@ -1,6 +1,6 @@
 # Proyecto-Capstone-Seguridad-de-eventos-Catastroficos
-Este esté repositorio se encontrara el proyecto.
 
+Este esté repositorio se encontrara el proyecto.
 
 
 ### Número de equipo	22
@@ -8,33 +8,58 @@ Este esté repositorio se encontrara el proyecto.
 
 ### Integrantes del equipo:
 
-
-    Victor Zuriel Dominguez Salvador
-    Eduardo Cabrera Mendoza
-	José Ernesto Calvillo Lizárraga
-
-
-
-### Descripción del proyecto	
-
-
-Nuestro proyecto es un sistema de detección de siniestros que ocurren en departamentos que busca prevenir las muertes en estos eventos catastróficos, el sistema se basa en sensores que miden diferentes parámetros para determinar si el hogar esta incendiado (temperatura, CO2, etc.) y de acuerdo con ello proporcionar rutas de escape de acuerdo con el evento que se esté presentando, así mismo, avisar a los cuerpos de seguridad como son los bomberos, policías, paramédicos dependiendo el caso.    
-
+Eduardo Cabrera Mendoza
+José Ernesto Calvillo Lizárraga
+Victor Zuriel Dominguez Salvador
 
 
 ### Roles de los miembros 
 
-
-	
-
-    Rol de Victor Zuriel Dominguez Salvador: Prototipo en físico (maqueta)/ Hardware/ Programación. 
-
-    Rol de Eduardo Cabrera Mendoza: Prototipo en físico (maqueta)/ Hardware/Programación.
-
-	Rol de José Ernesto Calvillo Lizárraga: Documentación/Programación.  
+Rol de Victor Zuriel Dominguez Salvador: Prototipo en físico (maqueta)/ Hardware/ Programación. 
+Rol de Eduardo Cabrera Mendoza: Prototipo en físico (maqueta)/ Hardware/Programación.
+Rol de José Ernesto Calvillo Lizárraga: Documentación/Programación.  
 
 
 --------------------------------------------------------------------------------------------------------------------------------------
+
+## Introducción
+
+### Tematica del proyecto
+
+El tema del proyecto es la creación de un sistema que ubique en un mapa en tiempo real donde se presenta algún incendio o una acumulación de gases.
+
+
+### Planteamiento del problema
+
+Con base a los datos del Instituto Nacional de Estadística y Geografía (INEGI) podemos determinar que actualmente el país sufre de un sistema de control de incendios deficiente, este se debe a varios factores los cuales varian entre cada localidad, algo que siempre se comenta son las llamadas falsas o que no son emergencia al 911 y la falta de recursos en los cerpos de bomberos para cubrir grandes distancias rapidamente y también se han presentado casos en los que a los cuerpos de emergencia se les complica identificar la ubicación del siniestro en áreas rurales.
+
+
+### Justificación
+
+De acuerdo con datos del Instituto Nacional de Estadística y Geografía (INEGI) en México se registran más de 95 mil incendios urbanos y no urbanos, dando un promedio de 260 incendios al día en todo el territorio nacional.
+El 21.7% de los incendios ocurren en viviendas, mientras que el 17.6% en comercios, el 12.2% en bodegas, un 11.2% en lotes baldios y un 37.3% en otros sitios como escuelas, hospitales, etc. Entre las causas de incendio identificados, la acumulación de Gas LP toma la segunda posición por detras de las fallas eléctricas. Estos siniestros ocasionan el 26.9% de la totalidad de la mortalidad asociada a humo, gases tóxicos, etc.
+Según la Encuesta Nacional de Salud y Nutrición (ENSANUT), en México 124 mil personas sufren quemaduras no fatales al año, y por cada fallecido, 220 personas quedan con secuelas de por vida.
+
+
+### Planteamiento de la solución
+
+Nuestro proyecto es un sistema de detección de siniestros que ocurren en departamentos que busca prevenir las muertes en estos eventos catastróficos, el sistema se basa en sensores que miden diferentes parámetros para determinar si el lugar sufre de una fuga de gas o de un incendio mediante parametros como la temperatura, CO2, etc. y de acuerdo con ello enviar una señal al servidor el cual identificará en un mapa la ubicación y el tipo de emergencia, además de reportar al dueño mediante un mensaje por Whatsapp y a los números de emergencia proporcionados por el dueño.
+
+
+Este sistema se tiene planeado ofrecer a los cuerpos de emergencia con el fin de generar un sistema el cual sea capaz de identificar y reportar emergencias rapidamente antes de que pueda cobrar vidas.
+
+Algunos obstaculos a superar serían de caracter politicos sociales, esto ya que evidentemente sería un servicio el cual requiera mantenimiento generando gastos públicos y para los usuarios que deseen instalarlos.
+
+Una vez implementado se puede generar a futuro un gran sistema de emergencias el cual pueda llegar a ser un seguimiento capaz de representar varias emergencias y realizar un seguimiento en tiempo real la ubicación de los cuerpos de emergencia y trazar rutas para reducir tiempos de traslado.
+
+
+### Objetivos
+
+#### Generales
+
+#### Particulares
+
+### Grupo de enfoque
 
 
 ## Primer avance del proyecto.
