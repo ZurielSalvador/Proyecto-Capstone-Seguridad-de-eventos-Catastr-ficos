@@ -39,6 +39,7 @@ Con base a los datos del Instituto Nacional de Estadística y Geografía (INEGI)
 De acuerdo con datos del Instituto Nacional de Estadística y Geografía (INEGI) en México se registran más de 95 mil incendios urbanos y no urbanos, dando un promedio de 260 incendios al día en todo el territorio nacional.
 El 21.7% de los incendios ocurren en viviendas, mientras que el 17.6% en comercios, el 12.2% en bodegas, un 11.2% en lotes baldios y un 37.3% en otros sitios como escuelas, hospitales, etc. Entre las causas de incendio identificados, la acumulación de Gas LP toma la segunda posición por detras de las fallas eléctricas. Estos siniestros ocasionan el 26.9% de la totalidad de la mortalidad asociada a humo, gases tóxicos, etc.
 Según la Encuesta Nacional de Salud y Nutrición (ENSANUT), en México 124 mil personas sufren quemaduras no fatales al año, y por cada fallecido, 220 personas quedan con secuelas de por vida.
+![](https://github.com/ZurielSalvador/Proyecto-Capstone-Seguridad-de-eventos-Catastroficos/blob/main/Imagenes/Grafica%20sitios%20donde%20ocurren%20incendios.png)
 
 
 ### Planteamiento de la solución
