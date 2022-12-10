@@ -1,24 +1,14 @@
 # Proyecto-Capstone-Seguridad-de-eventos-Catastroficos
 
-### Integrantes del equipo:
-
-     Eduardo Cabrera Mendoza
-     José Ernesto Calvillo Lizárraga
-     Victor Zuriel Dominguez Salvador
+[![Logo.png](https://i.postimg.cc/HWrnGPKQ/Logo.png)](https://postimg.cc/7byw0Xq6)
 
 
-### Roles de los miembros 
-
-     Rol de Eduardo Cabrera Mendoza:  Hardware/Programación.
-     Rol de José Ernesto Calvillo Lizárraga: Documentación/Programación.  
-     Rol de Victor Zuriel Dominguez Salvador:  Hardware/ Programación. 
-     
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
 ### Descripción
 
-
+Sistema de seguridad para detectar posibles eventos catastróficos. Enfocado en ayudar y prevenir posbiles accidentes de viviendas como incendios o anomalías con ayuda de la supervisión, monitoreo y detección de dichos eventos.
 
 ### Planteamiento del problema
 
@@ -52,6 +42,88 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 
 
 
+### Materiales Necesarios 
+
+
+
+**Sensor de Flama**
+
+[![Sensorflama.png](https://i.postimg.cc/zXVxgWBC/Sensorflama.png)](https://postimg.cc/BXf5Wj2b)
+
+
+
+**Sensor de Gas MQ6**
+
+[![Gas.png](https://i.postimg.cc/SKqLDzyt/Gas.png)](https://postimg.cc/Js6Bh0Hb)
+
+
+
+**Sensor Infrarrojo de temperatura**
+
+[![Sensor-Infrarrojo.png](https://i.postimg.cc/8k3hxYpv/Sensor-Infrarrojo.png)](https://postimg.cc/PNWpw28f)
+
+
+**Raspberry Pi 4**
+
+[![RSP4.jpg](https://i.postimg.cc/jqJXqTkc/RSP4.jpg)](https://postimg.cc/NLBTb3t2)
+
+
+
+### WorkFlow:
+
+
+[![Diagrama-en-blanco.png](https://i.postimg.cc/mkHJ76NH/Diagrama-en-blanco.png)](https://postimg.cc/Wqs5v8yN)
+
+
+
+
+### Instrucciones:
+
+
+1. Primero instala en Raspberry Pi 4 mosquitto, con los siguientes comandos de manera ordenada:
+
+
+    -sudo wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
+    -sudo apt-key add mosquitto-repo.gpg.key
+    -cd /etc/apt/sources.list.d/
+    -sudo wget http://repo.mosquitto.org/debian/mosquitto-buster.list
+    -sudo apt-get update
+    -sudo apt-get install mosquitto
+    -sudo apt-get install mosquitto-client
+
+
+
+2. Ahora instalaremos la siguiente libreria con ayuda del comando:
+
+
+     -pip install paho-mqtt
+
+
+Esta libreria nos permite publicar en MQTT programando en Python3.
+
+3. Clona nuestro el repositorio, y corre el programa llamado Proyecto-Seguridad.py
+
+
+*Nota: EL programa es capaz de ser modifacado de acuerdo a tu ubicación de vivienda*
+
+
+4. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra en tu ubicación se encedara un símbolo dependiendo la detección de algunos de los sensores.
+
+
+5. Finalmente Prueba el circuito.
+
+
+
+
+## Desarrollado por:
+
+
+**Victor Zuriel Dominguez Salvador**
+
+**Eduardo Cabrera Mendoza**
+     
+**José Ernesto Calvillo Lizárraga**
+     
 
 
 
