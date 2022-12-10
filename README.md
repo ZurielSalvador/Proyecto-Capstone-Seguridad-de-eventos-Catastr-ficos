@@ -100,10 +100,14 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
    *Nota: EL programa debe ser modifacado de acuerdo a tu ubicación de vivienda*
 
 
-4. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra tu ubicación por lo cual esta encedará un símbolo dependiendo la detección de los sensores.
+4. Arma el circuito
+
+[![Untitled-Sketch-bb.png](https://i.postimg.cc/4y5TMSqh/Untitled-Sketch-bb.png)](https://postimg.cc/PvPcv2tt)     
+
+5. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra tu ubicación por lo cual esta encedará un símbolo dependiendo la detección de los sensores.
 
 
-5. Finalmente Prueba el circuito.
+6. Finalmente Prueba el circuito.
 
 
 
