@@ -8,7 +8,7 @@
 
 ### Descripción
 
-Sistema de seguridad para detectar posibles eventos catastróficos. Enfocado en ayudar y prevenir posbiles accidentes de viviendas como incendios o anomalías con ayuda de la supervisión, monitoreo y detección de dichos eventos.
+Sistema de seguridad para detectar posibles eventos catastróficos. Enfocado en ayudar y prevenir posibles accidentes de viviendas como incendios o anomalías con ayuda de la supervisión, monitoreo y detección de dichos eventos.
 
 ### Planteamiento del problema
 
