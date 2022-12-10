@@ -102,7 +102,8 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 
 4. Arma el circuito
 
-[![Untitled-Sketch-bb.png](https://i.postimg.cc/4y5TMSqh/Untitled-Sketch-bb.png)](https://postimg.cc/PvPcv2tt)     
+[![Untitled-Sketch-bb.png](https://i.postimg.cc/zXBM8vRQ/Untitled-Sketch-bb.png)](https://postimg.cc/V5x4FYg9)
+
 
 5. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra tu ubicación por lo cual esta encedará un símbolo dependiendo la detección de los sensores.
 
