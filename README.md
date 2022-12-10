@@ -86,18 +86,18 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 
 
 
-2. Ahora instalaremos la siguiente libreria con ayuda del comando:
+2. Ahora instalaremos la siguiente librería con ayuda del comando:
 
 
      -pip install paho-mqtt
 
 
-     Esta libreria nos permite publicar en MQTT programando en Python3.
+     Esta librería nos permite publicar en MQTT programando en Python3.
 
 
 3. Clona nuestro el repositorio, y corre el programa llamado Proyecto-Seguridad.py
 
-   *Nota: EL programa debe ser modifacado de acuerdo a tu ubicación de vivienda*
+   *Nota: EL programa debe ser modificado de acuerdo a tu ubicación de vivienda*
 
 
 4. Arma el circuito
