@@ -12,10 +12,7 @@ Objetivos a lograr:
 
 
 
-
-
-
-Se corre el Programa el cual se encuentra en el mismo repositorio en la carpeta, llamado sensor-flama.py.
+Se corre el Programa el cual se encuentra de la carpeta asiganada del sensor, llamado sensor-flama.py.
 
 
 ## Evidencias
