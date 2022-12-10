@@ -38,7 +38,7 @@ Supervisar en tiempo real las viviendas o empresas en caso de un posible incendi
 
 ### Resultados esperados
 
-Se espera tener un sistema funcional, con las funciones necesarios para la detección, monitoreo y localización atraves de simbolos de advertencia de acuerdo a la cantidad masiva de datos. Visualización de un mapa en tiempo real dónde se puedan ver las localizaciones de las casas que posiblemente sufran de algún evento catastrófico.
+Se espera tener un sistema funcional, con las funciones necesarios para la detección, monitoreo y localización a tráves de símbolos de advertencia de acuerdo a la cantidad masiva de datos. Visualización de un mapa en tiempo real dónde se puedan ver las localizaciones de las casas que posiblemente sufran de algún evento catastrófico.
 
 
 
