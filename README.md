@@ -32,7 +32,7 @@ Supervisar en tiempo real las viviendas o empresas en caso de un posible incendi
 
 #### Objetivos Particulares
 
-     -Detectar un incendio de una determinada vivienda o departamento.
+     -Detectar un incendio o fuga de gas de una determinada vivienda o departamento.
 
      -Asegurar a personas que puedan salir heridas.
 
