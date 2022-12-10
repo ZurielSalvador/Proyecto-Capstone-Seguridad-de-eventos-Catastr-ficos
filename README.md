@@ -107,6 +107,22 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 
 5. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra tu ubicación por lo cual esta encedará un símbolo dependiendo la detección de los sensores.
 
+     - Instalación nodejs junto con el build essentials
+          - curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+          - sudo apt-get install -y nodejs
+          - apt-get install -y build-essential
+     - Instalación de NodeRed con npm
+          - sudo npm install -g --unsafe-perm node-red
+
+     - Ir a manage palette e instalar los siguientes modulos de nodos necesarios para el proyecto
+          - node-red-contrib-web-worldmap
+          - node-red-contrib-huemagic
+
+     - En caso de tener las luces de hue philips importar el archivo "Mapa de catastrofes(hue).json" que se encuantra en la carpeta Node Red.
+     - En caso de solo querer probar la localizacion en mapa importar el archivo "Mapa de catastrofes.json" que se encuantra en la carpeta Node Red.
+
+     - Para ver el mapa ingresa a la dirección http://\<IP de el servidor node red\>:1880/map
+
 
 6. Finalmente Prueba el circuito.
 

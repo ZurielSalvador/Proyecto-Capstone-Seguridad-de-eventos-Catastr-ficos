@@ -1,0 +1,400 @@
+[
+    {
+        "id": "f91577c19f663484",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e8a23a45c5e147a3",
+        "type": "mqtt in",
+        "z": "f91577c19f663484",
+        "name": "",
+        "topic": "SeguridadCatastrofes/Departamento/cocina",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "05e458152a7436f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "0c5104df453593c6"
+            ]
+        ]
+    },
+    {
+        "id": "477cdcaf30d105e4",
+        "type": "comment",
+        "z": "f91577c19f663484",
+        "name": "Recibe el json",
+        "info": "",
+        "x": 110,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0c5104df453593c6",
+        "type": "json",
+        "z": "f91577c19f663484",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "8be9cf18718c120a"
+            ]
+        ]
+    },
+    {
+        "id": "8be9cf18718c120a",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Variables globales",
+        "func": "global.set(\"casaID\", msg.payload.casaID);\nglobal.set(\"temperatura\", msg.payload.temperatura);\nglobal.set(\"gas\", msg.payload.gas);\nglobal.set(\"flama\", msg.payload.flama);\nglobal.set(\"latitud\", msg.payload.latitud);\nglobal.set(\"longitud\", msg.payload.longitud);\nglobal.set(\"direccion\", msg.payload.direccion);\n\nif (msg.payload.casaID == 2) {\n    if (msg.payload.gas == 0) {\n        global.set(\"casa2_I/F\", 1)\n    }\n    if (msg.payload.temperatura >= 40 && msg.payload.flama == 0) {\n        global.set(\"casa2_I/F\", 2)\n    }\n    if ((global.get(\"casa2_I/F\") == 1) && (msg.payload.gas == 1)){\n        global.set(\"casa2_I/F\", 0)\n    }\n    if ((global.get(\"casa2_I/F\") == 2) && (msg.payload.temperatura <= 60 && msg.payload.flama == 1)) {\n        global.set(\"casa2_I/F\", 0)\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d58d61604d9ec0a6",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Deteción de incendios",
+        "func": "if (global.get(\"temperatura\") >= 40 && global.get(\"flama\") == 0){\n    var aux = \"Incendio en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"icon\": \"fa-free-code-camp\", \"iconColor\": \"red\", \"label\": global.get(\"direccion\") };\n    return msg;\n}\nelse{\n    var aux = \"Incendio en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"deleted\": true };\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "ecf00caa08447e90"
+            ]
+        ]
+    },
+    {
+        "id": "c7c99ce368e87102",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Deteción de fugas de gas",
+        "func": "if (global.get(\"gas\") == 0 ){\n    var aux = \"Fuga de gas en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"icon\": \"fa-fire-extinguisher\", \"iconColor\": \"yellow\", \"label\": global.get(\"direccion\") };\n    return msg;\n}\nelse{\n    var aux = \"Fuga de gas en casa \" + global.get(\"casaID\")\n    msg.payload = { \"name\": aux, \"lat\": global.get(\"latitud\"), \"lon\": global.get(\"longitud\"), \"deleted\": true };\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "ecf00caa08447e90"
+            ]
+        ]
+    },
+    {
+        "id": "ecf00caa08447e90",
+        "type": "worldmap",
+        "z": "f91577c19f663484",
+        "name": "",
+        "lat": "19.354509",
+        "lon": "-99.236450",
+        "zoom": "",
+        "layer": "EsriDG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/map",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 730,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "7461b9746ea56326",
+        "type": "hue-magic",
+        "z": "f91577c19f663484",
+        "name": "",
+        "endless": true,
+        "restore": false,
+        "preset": "015-sos",
+        "steps": "[{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":1000,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":1000,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":1000,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":1000,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":1000,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":1000,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":100,\"transitionTime\":0}},{\"delay\":500,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}},{\"delay\":1000,\"animation\":{\"hex\":\"#fff\",\"brightness\":0,\"transitionTime\":0}}]",
+        "x": 910,
+        "y": 480,
+        "wires": [
+            [
+                "0c9ab39f110f7514"
+            ]
+        ]
+    },
+    {
+        "id": "0c9ab39f110f7514",
+        "type": "hue-light",
+        "z": "f91577c19f663484",
+        "name": "Foco lalo",
+        "bridge": "d7dda27061e6ede0",
+        "lightid": "11a1edaa-3923-4443-89ec-3bb3bb256c03",
+        "colornamer": true,
+        "skipevents": false,
+        "initevents": false,
+        "x": 1200,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac5c5893a369ba2f",
+        "type": "comment",
+        "z": "f91577c19f663484",
+        "name": "Marca los puntos en el mapa",
+        "info": "",
+        "x": 160,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "cd1ba1b758cdd9dd",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Focos",
+        "func": "if (global.get(\"casa2_I/F\") != 0) {\n    msg.payload = '{\"animate\":true,\"steps\":[{\"delay\":0,\"animation\":{\"hex\":\"#FF0000\",\"brightness\":100,\"transitionTime\": 2}},{\"delay\": 0,\"animation\":{\"hex\": \"#FF0000\",\"brightness\": 20,\"transitionTime\":2}}]}'\n}\nelse{\n    msg.payload = '{\"on\": true,\"brightness\": 100,\"rgb\":[255,255,255]}'\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 460,
+        "wires": [
+            [
+                "f3c4587721214870"
+            ]
+        ]
+    },
+    {
+        "id": "f3c4587721214870",
+        "type": "switch",
+        "z": "f91577c19f663484",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "{\"on\": true,\"brightness\": 100,\"rgb\":[255,255,255]}",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "{\"animate\":true,\"steps\":[{\"delay\":0,\"animation\":{\"hex\":\"#FF0000\",\"brightness\":100,\"transitionTime\": 2}},{\"delay\": 0,\"animation\":{\"hex\": \"#FF0000\",\"brightness\": 20,\"transitionTime\":2}}]}",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 460,
+        "wires": [
+            [
+                "e44673841622f5c5"
+            ],
+            [
+                "44d084f35a6838ef"
+            ]
+        ]
+    },
+    {
+        "id": "e44673841622f5c5",
+        "type": "json",
+        "z": "f91577c19f663484",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 670,
+        "y": 440,
+        "wires": [
+            [
+                "0c9ab39f110f7514"
+            ]
+        ]
+    },
+    {
+        "id": "44d084f35a6838ef",
+        "type": "json",
+        "z": "f91577c19f663484",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "7461b9746ea56326"
+            ]
+        ]
+    },
+    {
+        "id": "34af937c21d73c44",
+        "type": "complete",
+        "z": "f91577c19f663484",
+        "name": "",
+        "scope": [
+            "d58d61604d9ec0a6",
+            "c7c99ce368e87102"
+        ],
+        "uncaught": false,
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "cd1ba1b758cdd9dd"
+            ]
+        ]
+    },
+    {
+        "id": "a48c3193fd56e3a9",
+        "type": "complete",
+        "z": "f91577c19f663484",
+        "name": "",
+        "scope": [
+            "8be9cf18718c120a"
+        ],
+        "uncaught": false,
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "c7c99ce368e87102",
+                "d58d61604d9ec0a6"
+            ]
+        ]
+    },
+    {
+        "id": "58e7a9f81f545fc7",
+        "type": "function",
+        "z": "f91577c19f663484",
+        "name": "Parar animación",
+        "func": "msg.payload = false;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 540,
+        "wires": [
+            [
+                "7461b9746ea56326"
+            ]
+        ]
+    },
+    {
+        "id": "6436f5c397cfb14a",
+        "type": "complete",
+        "z": "f91577c19f663484",
+        "name": "",
+        "scope": [
+            "cd1ba1b758cdd9dd"
+        ],
+        "uncaught": false,
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "58e7a9f81f545fc7"
+            ]
+        ]
+    },
+    {
+        "id": "4613f10467da41f0",
+        "type": "comment",
+        "z": "f91577c19f663484",
+        "name": "Desactiva la animación de la alarma",
+        "info": "",
+        "x": 180,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "458f37ac1496fabc",
+        "type": "comment",
+        "z": "f91577c19f663484",
+        "name": "Activa/Desactiva la alarma",
+        "info": "",
+        "x": 150,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "05e458152a7436f7",
+        "type": "mqtt-broker",
+        "name": "Broker HiveMQ",
+        "broker": "3.124.62.105",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d7dda27061e6ede0",
+        "type": "hue-bridge",
+        "name": "Philips hue",
+        "bridge": "192.168.100.86",
+        "key": "kQR6pQumvdxPSfVqPoGtTh51MYRx6VBf-yVeLNf1",
+        "worker": "10",
+        "autoupdates": true,
+        "disableupdates": false
+    }
+]
