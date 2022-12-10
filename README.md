@@ -44,28 +44,9 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 
 ### Materiales Necesarios 
 
+[![materiales.jpg](https://i.postimg.cc/V6tf74zj/materiales.jpg)](https://postimg.cc/9RWH0dRM)
 
 
-**Sensor de Flama**
-
-[![Sensorflama.png](https://i.postimg.cc/zXVxgWBC/Sensorflama.png)](https://postimg.cc/BXf5Wj2b)
-
-
-
-**Sensor de Gas MQ6**
-
-[![Gas.png](https://i.postimg.cc/SKqLDzyt/Gas.png)](https://postimg.cc/Js6Bh0Hb)
-
-
-
-**Sensor Infrarrojo de temperatura**
-
-[![Sensor-Infrarrojo.png](https://i.postimg.cc/8k3hxYpv/Sensor-Infrarrojo.png)](https://postimg.cc/PNWpw28f)
-
-
-**Raspberry Pi 4**
-
-[![RSP4.jpg](https://i.postimg.cc/jqJXqTkc/RSP4.jpg)](https://postimg.cc/NLBTb3t2)
 
 
 
@@ -83,13 +64,25 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 1. Primero instala en Raspberry Pi 4 mosquitto, con los siguientes comandos de manera ordenada:
 
 
-    -sudo wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
-    -sudo apt-key add mosquitto-repo.gpg.key
-    -cd /etc/apt/sources.list.d/
-    -sudo wget http://repo.mosquitto.org/debian/mosquitto-buster.list
-    -sudo apt-get update
-    -sudo apt-get install mosquitto
-    -sudo apt-get install mosquitto-client
+     -sudo wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
+
+
+     -sudo apt-key add mosquitto-repo.gpg.key
+
+
+     -cd /etc/apt/sources.list.d/
+
+
+     -sudo wget http://repo.mosquitto.org/debian/mosquitto-buster.list
+
+
+     -sudo apt-get update
+
+
+     -sudo apt-get install mosquitto
+
+
+     -sudo apt-get install mosquitto-client
 
 
 
@@ -99,15 +92,15 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
      -pip install paho-mqtt
 
 
-Esta libreria nos permite publicar en MQTT programando en Python3.
+     Esta libreria nos permite publicar en MQTT programando en Python3.
+
 
 3. Clona nuestro el repositorio, y corre el programa llamado Proyecto-Seguridad.py
 
+   *Nota: EL programa debe ser modifacado de acuerdo a tu ubicación de vivienda*
 
-*Nota: EL programa es capaz de ser modifacado de acuerdo a tu ubicación de vivienda*
 
-
-4. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra en tu ubicación se encedara un símbolo dependiendo la detección de algunos de los sensores.
+4. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra tu ubicación por lo cual esta encedará un símbolo dependiendo la detección de los sensores.
 
 
 5. Finalmente Prueba el circuito.
