@@ -57,9 +57,11 @@ De acuerdo con datos del Instituto Nacional de Estadística y Geografía (INEGI)
 Equipo:
 
 
- -Victor Zuriel Dominguez Salvador
- -Eduardo Cabrera Mendoza 
- -José Ernesto Calvillo Lizárraga
+   -Victor Zuriel Dominguez Salvador
+
+   -Eduardo Cabrera Mendoza
+
+   -José Ernesto Calvillo Lizárraga
 
 
 **Validado por:**
@@ -79,7 +81,7 @@ Equipo:
 **Productos:**
 
 
-Se elabora un circuito con los sensore de gas, flama y temperatura capaz de detectar y mandar una señal de alerta en un mapa y alertar alguna ayuda.
+Se elabora un circuito con los sensores de gas, flama y temperatura capaz de detectar y mandar una señal de alerta en un mapa de acuerdo con elllo alertar alos organismos de ayuda.
 
 
 
