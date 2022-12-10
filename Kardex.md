@@ -33,12 +33,12 @@ Programa que localiza si hay una detección de fuga de gas,  flama y que tempera
 **Objetivo general:**
 
 
-Supervisar en tiempo real las viviendas o empresas en caso de un posible incendio para obtener una mayor seguridad 
+Supervisar en tiempo real las viviendas o empresas en caso de un posible incendio o fuga de gas para obtener una mayor seguridad.
 
 
 **Objetivos específicos:**
 
-     -Detectar un incendio en una determinada vivienda o departamento.
+     -Detectar un incendio de una determinada vivienda o departamento.
 
      -Asegurar a personas que puedan salir heridas.
 

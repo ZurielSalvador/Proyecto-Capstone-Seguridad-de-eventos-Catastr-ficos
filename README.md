@@ -1,11 +1,5 @@
 # Proyecto-Capstone-Seguridad-de-eventos-Catastroficos
 
-Este esté repositorio se encontrara el proyecto.
-
-
-### Número de equipo	22
-
-
 ### Integrantes del equipo:
 
      Eduardo Cabrera Mendoza
@@ -15,18 +9,15 @@ Este esté repositorio se encontrara el proyecto.
 
 ### Roles de los miembros 
 
-     Rol de Eduardo Cabrera Mendoza: Prototipo en físico (maqueta)/ Hardware/Programación.
+     Rol de Eduardo Cabrera Mendoza:  Hardware/Programación.
      Rol de José Ernesto Calvillo Lizárraga: Documentación/Programación.  
-     Rol de Victor Zuriel Dominguez Salvador: Prototipo en físico (maqueta)/ Hardware/ Programación. 
+     Rol de Victor Zuriel Dominguez Salvador:  Hardware/ Programación. 
      
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
-## Introducción
+### Descripción
 
-### Tematica del proyecto
-
-El tema del proyecto es la creación de un sistema que ubique en un mapa en tiempo real donde se presenta algún incendio o una acumulación de gases.
 
 
 ### Planteamiento del problema
@@ -45,86 +36,22 @@ Según la Encuesta Nacional de Salud y Nutrición (ENSANUT), en México 124 mil 
 </p>
 
 
-### Planteamiento de la solución
+#### Objetivo General
 
-Nuestro proyecto es un sistema de detección de siniestros que ocurren en departamentos que busca prevenir las muertes en estos eventos catastróficos, el sistema se basa en sensores que miden diferentes parámetros para determinar si el lugar sufre de una fuga de gas o de un incendio mediante parametros como la temperatura, CO2, etc. y de acuerdo con ello enviar una señal al servidor el cual identificará en un mapa la ubicación y el tipo de emergencia, además de reportar al dueño mediante un mensaje por Whatsapp y a los números de emergencia proporcionados por el dueño.
+Supervisar en tiempo real las viviendas o empresas en caso de un posible incendio o fuga de gas para obtener una mayor seguridad.
 
+#### Objetivos Particulares
 
-Este sistema se tiene planeado ofrecer a los cuerpos de emergencia con el fin de generar un sistema el cual sea capaz de identificar y reportar emergencias rapidamente antes de que pueda cobrar vidas.
+     -Detectar un incendio de una determinada vivienda o departamento.
 
-Algunos obstaculos a superar serían de caracter politicos sociales, esto ya que evidentemente sería un servicio el cual requiera mantenimiento generando gastos públicos y para los usuarios que deseen instalarlos.
+     -Asegurar a personas que puedan salir heridas.
 
-Una vez implementado se puede generar a futuro un gran sistema de emergencias el cual pueda llegar a ser un seguimiento capaz de representar varias emergencias y realizar un seguimiento en tiempo real la ubicación de los cuerpos de emergencia y trazar rutas para reducir tiempos de traslado.
+### Resultados esperados
 
-
-### Objetivos
-
-#### Generales
-
-#### Particulares
-
-### Grupo de enfoque
-
-
-## Primer avance del proyecto.
+Se espera tener un sistema funcional, con las funciones necesarios para la detección, monitoreo y localización atraves de simbolos de advertencia de acuerdo a la cantidad masiva de datos. Visualización de un mapa en tiempo real dónde se puedan ver las localizaciones de las casas que posiblemente sufran de algún evento catastrófico.
 
 
 
-### Implementación.
-
-
-
-1. Se elaboró un programa de ejemplo para el sensor de flama- Sensor-ARD-364.
-
-
-
-     Para poder ver dicho código se encuentra en la carpeta Codigo-Sensores/Sensor-ARD-364
-
-
-2. Se elaboró un ejemplo para enviar mensaje por Whatsapp mediante a Node-RED.
-
-
-
-     El archivo JSON se encuentra en la carpeta llamada: Notificación por whatsapp mediante Node-Red
-
-
-
-3. Se elaboró un codigo del sensor mpu6050 dónde guarda los valores en la base de datos MySQL, posteriormente se gráfica en grafana.
-
-
-     Esta información es muy importante debido se obtiene las lecturas de los sensores guardados y con ayuda de grafana podemos adquirir información sobre el estado que se encuentre dicho departamento, por lo tanto como primer avance se identifa como actúan los sensores con base a lo requerido para nuestra primera implementación.
-
-
-
-La información obtenida del sensor mpu6050 se gráfica para ver el comportamiento de manera clara y de acuerdo a lo implementando de la base datos podemos tener un historial de información sobre la lectura del sensor.
-
-
-
-### Evidencias del Primer Avance
-
-
-
-#### Sensor mpu6050 Directo con la Raspberry.
-
-
-[![Sensor-mpu6050.jpg](https://i.postimg.cc/3rf6kxbL/Sensor-mpu6050.jpg)](https://postimg.cc/c6YTj0WY)
-
-
-
-#### Grafana
-
-
-[![Grafana-mpu6050.jpg](https://i.postimg.cc/Pq6c1f5r/Grafana-mpu6050.jpg)](https://postimg.cc/QBT0337R)
-
-
-
-#### Base de datos MySQL-Sensor mpu6050
-
-
-[![base-de-datos-mysql.jpg](https://i.postimg.cc/902GMZH4/base-de-datos-mysql.jpg)](https://postimg.cc/vgP121BM)
-
-
-[![base-de-datos-mysql2.jpg](https://i.postimg.cc/GmfGDZ1n/base-de-datos-mysql2.jpg)](https://postimg.cc/hX9XWZj2)
 
 
 
