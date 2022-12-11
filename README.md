@@ -124,7 +124,17 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
      - Para ver el mapa ingresa a la dirección http://\<IP de el servidor node red\>:1880/map
 
 
-6. Finalmente Prueba el circuito.
+6. Finalmente tenemos los siguientes Resultados:
+
+
+Detección de incendio y fuga de gas en diferentes ubicaciones:
+
+
+[![incendio-mxc.png](https://i.postimg.cc/CLkBYy93/incendio-mxc.png)](https://postimg.cc/JG74cFrx)
+
+
+[![incendio-y-gas2.png](https://i.postimg.cc/d3MsS3QL/incendio-y-gas2.png)](https://postimg.cc/TL9vKRD6)
+
 
 
 
