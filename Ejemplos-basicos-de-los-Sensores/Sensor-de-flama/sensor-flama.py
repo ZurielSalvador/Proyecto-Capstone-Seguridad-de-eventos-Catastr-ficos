@@ -3,7 +3,7 @@
 import RPi.GPIO as GPIO
 #Se importa la función sleep de la biblioteca time.
 from time import sleep
-#Se configura el pin 4 como entrada.
+#Se configura el pin GPIO 4 como entrada.
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN)
 
