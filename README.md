@@ -135,7 +135,7 @@ Detección de incendio y fuga de gas en diferentes ubicaciones:
 
 [![incendio-y-gas2.png](https://i.postimg.cc/d3MsS3QL/incendio-y-gas2.png)](https://postimg.cc/TL9vKRD6)
 
-###Conclusión
+### Conclusión
 
 Al elaborar este proyecto se logró identificar una problematica actual presente en la Ciudad de México como en Mexicali, Baja California Norte. Esta problematica es la cantidad de accidentes derivados por las fugas de gas LP e incendios en zonas casas y apartamentos.
 La creación de este sistema se realizó con la idea en mente de poder reducir las muertes y heridas derivadas por estos eventos catastroficos. Al finalizarlo nos llegó a la mente varias posibles mejoras que se pueden implementar con el objetivo hacerlo más atractivo a los cuerpos de emergencias.
