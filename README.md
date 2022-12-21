@@ -143,6 +143,20 @@ Gracias a las actuales herramientas para el trabajo a distancia no tuvimos ningu
 
 
 
+### Video Corto:
+
+
+https://youtu.be/3aXZZZSivIo
+
+
+### Video Extenso:
+
+
+https://youtu.be/OTrh52x3uSs
+
+
+
+
 ## Desarrollado por:
 
 
