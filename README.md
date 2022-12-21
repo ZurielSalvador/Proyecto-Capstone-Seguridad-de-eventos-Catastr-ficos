@@ -44,7 +44,7 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 
 ### Materiales Necesarios 
 
-[![materiales.jpg](https://i.postimg.cc/V6tf74zj/materiales.jpg)](https://postimg.cc/9RWH0dRM)
+[![materiales.jpg](https://i.postimg.cc/Y01mjDbJ/materiales.jpg)](https://postimg.cc/jnSjFcVX)
 
 
 
@@ -102,7 +102,7 @@ Se espera tener un sistema funcional, con las funciones necesarios para la detec
 
 4. Arma el circuito
 
-[![Untitled-Sketch-bb.png](https://i.postimg.cc/zXBM8vRQ/Untitled-Sketch-bb.png)](https://postimg.cc/V5x4FYg9)
+[![Untitled-Sketch-bb.png](https://i.postimg.cc/QxmHPTPk/Untitled-Sketch-bb.png)](https://postimg.cc/JGyrHGRG)
 
 
 5. Se diseña en Node-Red un flow capaz de recibir datos necesarios publicados en MQTT posteriormente da una alarma en el sistema y encuentra tu ubicación por lo cual esta encedará un símbolo dependiendo la detección de los sensores.
