@@ -1,7 +1,7 @@
 #Proyecto: Seguridad de Eventos Catastróficos
 #Autores:
 #Victor Zuriel Dominguez Salvador
-#Jose Ernesto Calvillo Lizárraga
+#José Ernesto Calvillo Lizárraga
 #Eduardo Cabrera Mendoza
 
 
